@@ -1,6 +1,6 @@
 package one.digitalinnovation.personapi.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -37,7 +37,7 @@ public class Person {
 	@Column(nullable = false,unique = true)
 	private String cpf;
 	
-	private Date birthDate;
+	private LocalDate birthDate;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
 	private List<Phone> phones;
